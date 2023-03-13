@@ -6,7 +6,9 @@ var temp_cart = [];
 
 function addProductToCart(product) {
   temp_cart = [];
-  temp_cart = getLocalStorage("so-cart");
+  if (getLocalStorage("so-cart") != null){
+    temp_cart = getLocalStorage("so-cart");
+  }
   temp_cart.push(product);
   setLocalStorage("so-cart", temp_cart);
 }
